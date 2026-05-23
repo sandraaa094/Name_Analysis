@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>分析結果</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="result.css">
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho&family=Zen+Old+Mincho&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Noto+Serif+JP:wght@200..900&family=Rampart+One&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Sawarabi+Mincho&family=Shippori+Mincho&family=Train+One&family=UoqMunThenKhung&family=Yomogi&family=Zen+Kurenaido&family=Zen+Old+Mincho&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="newspaper-layout">
+            <div id="type"></div> 
+            <h1 id="name"></h1>
+            
+            <div class="main-content-split">
+                <div class="info-side">
+                    <div class="meta-info">
+                        <span id="strokeCount"></span>
+                        <span id="fortuneBadge"></span>
+                    </div>
+                    <div id="fortuneName"></div>
+                    <div class="analysis-box">
+                        <p id="Analysis"></p>
+                    </div>
+                </div>
+
+                <div class="chart-side">
+                    <div class="chart-container">
+                        <canvas id="radarChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="disclaimer">
+                ※ 以上分析結果僅供休閒與姓名學數理參考。
+            </div>
+
+            <div class="btn-group">
+                <button class="back-btn" id="nextAnalysisBtn">分析下一格</button>
+                <button class="back-btn home-style" id="homeBtn">返回首頁</button>
+            </div>
+        </div>
+    </div>
+    <script src="result.js"></script>
+</body>
+</html>

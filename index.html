@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name Analysis</title>
+    <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Rampart+One&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Sawarabi+Mincho&family=UoqMunThenKhung&family=Zen+Kurenaido&family=Zen+Old+Mincho&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Rampart+One&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Sawarabi+Mincho&family=UoqMunThenKhung&family=Zen+Old+Mincho&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Rampart+One&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Sawarabi+Mincho&family=Shippori+Mincho&family=UoqMunThenKhung&family=Zen+Kurenaido&family=Zen+Old+Mincho&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Noto+Serif+JP:wght@200..900&family=Rampart+One&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Sawarabi+Mincho&family=Shippori+Mincho&family=Train+One&family=UoqMunThenKhung&family=Yomogi&family=ZCOOL+QingKe+HuangYou&family=Zen+Kurenaido&family=Zen+Old+Mincho&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <section class="bg">
+
+   <h1>姓不姓由你</h1>
+<h3>Name Analysis System</h3>
+
+<div class="input-area">
+<input id="lastName" placeholder="你的姓氏">
+<input id="firstName" placeholder="你的名字">
+<button id="enterbtn">開始分析</button>
+</div>
+
+<h2>請點選下方按鈕查看分析結果!!!</h2>
+
+
+
+
+<div class="container">
+
+
+<div class="card">
+   
+<button class="btn" onclick="goToPage('天格')">天格</button>
+
+<p>代表先天運勢與家族背景，反映早年成長環境與基礎條件</p>
+</div>
+
+<div class="card">
+      
+    <button class="btn" onclick="goToPage('地格')">地格</button>
+    <p>代表後天運勢，反映個人成長、基礎能力與人生發展。</p>
+</div>
+
+<div class="card">
+     
+    <button class="btn" onclick="goToPage('人格')">人格</button>
+    <p>代表個人性格與主運，反映一個人的內在特質、能力與人生核心走向。</p>
+</div>
+
+<div class="card">
+      
+    <button class="btn" onclick="goToPage('外格')">外格</button>
+    <p>代表人際關係與對外表現，反映與他人互動的方式及社交狀況。</p>
+</div>
+
+<div class="card">
+       
+    <button class="btn" onclick="goToPage('總格')">總格</button>
+    <p>代表整體運勢與人生結果，反映中晚年發展與最終成就。</p>
+</div>
+
+</div>
+
+</section>
+
+
+ <script src="button/button.js"></script>
+</body> 
+</html>
