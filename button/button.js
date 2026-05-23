@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const lastInput = document.getElementById("lastName");
             const firstInput = document.getElementById("firstName");
             if (lastInput && firstInput && lastInput.value.trim() !== "" && firstInput.value.trim() !== "") {
-                alert("請點選下方卡片按鈕（天格、人格等）查看對應的分析結果！");
+                alert("請點選下方卡片按鈕查看對應的分析結果！");
             } else {
                 alert("請先輸入您的姓氏與名字！");
             }

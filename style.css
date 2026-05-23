@@ -30,8 +30,7 @@ body {
     align-items: center;
 }
 
-
-h1{
+h1 {
     color: rgba(81, 87, 150, 0.756);
     font-size: 75px;
     font-family: "UoqMunThenKhung", serif;
@@ -39,73 +38,63 @@ h1{
     font-style: normal;
     margin-bottom: 8px;
 }
-h3{
+
+h3 {
     color: rgba(114, 110, 26, 0.934);
     font-family: "Noto Serif TC", serif;
     font-size: 30px;
     margin-top: 0;
 }
 
-p{
-    max-width: 260px;
+p {
+    width: 100%;
+    max-width: 100%;
     margin: 0 auto;
     text-align: center;
     line-height: 1.8;
-    word-break: keep-all;
+    word-break: break-all;
     font-family: "Shippori Mincho", serif;
 }
 
-h2{
+h2 {
      font-family: "ZCOOL QingKe HuangYou", sans-serif;
-     font-weight: 400;;
+     font-weight: 400;
      font-size: 20px;
      color: rgb(15, 59, 59);
      text-align: center;
 }
-.container
-{
+
+.container {
     display: flex;
     flex-wrap: nowrap;
-
-    gap: 30px;
-
-    width: 90%;
-    max-width: 1400px;
-
+    gap: 20px;
+    width: 95%;
+    max-width: 1440px;
     margin-top: 120px;
-
     justify-content: center;
-
+    box-sizing: border-box;
 }
 
-.btn
-{
+.btn {
     padding: 10px 25px;
     margin-top: 0;
-
     font-size: 20px;
     font-family: "UoqMunThenKhung", serif;
-
     background-color: #ffffff;
     color: #7d4b11;
     writing-mode: horizontal-tb;
     white-space: nowrap;
-
     border: none;
     border-radius: 12px;
-
     transition: 0.2s;
-
 }
 
-.btn:hover
-{
+.btn:hover {
     background-color: #b5bac2;
     transform: translateY(-3px);
 }
 
-.card
-{
+.card {
     margin-top: -55px;
     display: flex;
     flex-direction: column;
@@ -113,25 +102,51 @@ h2{
     align-items: center;
     background-color: #d4a478;
     border-radius: 20px;
-    width: 260px;
-    max-width: 90%;
-    padding: 150px 10px;
+    flex: 1;
+    min-width: 0;
+    padding: 150px 15px;
     padding-top: 20px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     line-height: 1.6;
     letter-spacing: 1px;
-    word-break: keep-all;
+    box-sizing: border-box;
 }
 
-input
-{
+input {
     size: 45px;
 }
 
-#enterbtn
-{
+#enterbtn {
    font-size: 15px; 
    background-color:#b89f9f;
    text-shadow: #ebd84f;
 }
 
+@media (max-width: 992px) {
+    .bg {
+        background-size: cover; 
+        background-position: center;
+        padding-bottom: 60px;
+    }
+
+    h1 {
+        font-size: 42px;
+    }
+    h3 {
+        font-size: 22px;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 80px; 
+        gap: 40px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 280px;
+        margin-top: 0px;
+        padding: 50px 20px;
+    }
+}
