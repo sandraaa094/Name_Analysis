@@ -53,21 +53,26 @@ async function main() {
         nameDisplay.innerText = lastname + firstname;
     }
 
+    const hints = {
+        '天格': '代表家族遺傳、長輩緣與少年時期的運勢',
+        '人格': '姓名核心！代表主觀意識、內在性格與中心命運',
+        '地格': '代表前中期發展、夫妻宮、子女運與部屬關係',
+        '外格': '代表社交能力、人際關係、家族外的社會表現',
+        '總格': '代表後半生整體運勢、最終成就與晚年歸宿'
+    };
+
     if (typeDisplay) {
         typeDisplay.innerText = typeValue + "分析";
-
-        const hints = {
-            '天格': '代表家族遺傳、長輩緣與少年時期的運勢',
-            '人格': '姓名核心！代表主觀意識、內在性格與中心命運',
-            '地格': '代表前中期發展、夫妻宮、子女運與部屬關係',
-            '外格': '代表社交能力、人際關係、家族外的社會表現',
-            '總格': '代表後半生整體運勢、最終成就與晚年歸宿'
-        };
 
         const tooltipSpan = document.createElement('span');
         tooltipSpan.className = 'tooltip-q';
         tooltipSpan.setAttribute('data-hint', hints[typeValue] || '代表社交、人際關係與對外表現');
         tooltipSpan.textContent = '?';
+        
+        tooltipSpan.addEventListener('click', function() {
+            alert(`${typeValue}含意：\n${hints[typeValue] || '代表社交、人際關係與對外表現'}`);
+        });
+        
         typeDisplay.appendChild(tooltipSpan);
     }
 
@@ -110,12 +115,12 @@ async function main() {
     await loadStrokes();
     await loadFortune();
 
-    const L1 = getS(lastname[0]);
+    const L1 = lastname.length > 0 ? getS(lastname[0]) : 0;
     const L2 = lastname.length > 1 ? getS(lastname[1]) : 0;
-    const F1 = getS(firstname[0]);
+    const F1 = firstname.length > 0 ? getS(firstname[0]) : 0;
     const F2 = firstname.length > 1 ? getS(firstname[1]) : 0;
 
-    if (!L1 || !F1) {
+    if ((lastname.length > 0 && !L1) || (firstname.length > 0 && !F1)) {
         if (AnalysisText) AnalysisText.innerText = "❌ 有字查不到康熙筆畫";
         return;
     }
@@ -123,8 +128,8 @@ async function main() {
     const tianScore = (lastname.length === 1) ? L1 + 1 : L1 + L2;
     const diScore   = (firstname.length === 1) ? F1 + 1 : F1 + F2;
     const renScore  = (lastname.length === 1) ? L1 + F1 : L2 + F1;
-    const zongScore = L1 + L2 + F1 + F2;
-    const waiScore  = zongScore - renScore + 1;
+    const zongScore = (lastname.length === 1 ? L1 : L1 + L2) + (firstname.length === 1 ? F1 : F1 + F2);
+    const waiScore  = (lastname.length === 1 && firstname.length === 1) ? 2 : zongScore - renScore + (lastname.length === 1 || firstname.length === 1 ? 1 : 0);
 
     let currentScore = 0;
     if (typeValue === "天格") currentScore = tianScore;
