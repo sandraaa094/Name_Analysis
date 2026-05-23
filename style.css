@@ -122,7 +122,7 @@ input {
    text-shadow: #ebd84f;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 768px) {
     .bg {
         background-size: cover; 
         background-position: center;
@@ -130,16 +130,14 @@ input {
     }
 
     h1 {
-        font-size: 42px;
+        font-size: 42px; 
     }
     h3 {
         font-size: 22px;
     }
 
     .container {
-        flex-direction: column;
-        align-items: center;
-        margin-top: 80px; 
+        margin-top: 15px; 
         gap: 40px;
     }
 
