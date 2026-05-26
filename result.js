@@ -31,8 +31,8 @@ function getFortuneScore(level) {
     if (!level) return 3; 
     if (level.includes("大吉")) return 5;
     if (level.includes("大凶")) return 1;
-    if (level.includes("吉")) return 4;
     if (level.includes("半吉")) return 3;
+    if (level.includes("吉")) return 4;
     if (level.includes("凶")) return 2;
     return 3;
 }
